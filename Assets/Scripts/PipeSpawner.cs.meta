@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2758c777e0b84824090a6c78f8a15eda
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabGreenPipe: {fileID: 8367743689942355194, guid: 4ed5e8ab50120ec46adcc5bab4485e52, type: 3}
+  - prefabRedPipe: {fileID: 8367743689942355194, guid: c1030553520f0c241bb7904fab2a34e8, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
