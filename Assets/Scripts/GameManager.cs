@@ -30,7 +30,7 @@ public class GameManager : Singleton<GameManager>
     public void RepeatGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Game");
     }
     public void OnGameOver()
     {
