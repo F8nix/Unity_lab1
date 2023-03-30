@@ -12,6 +12,10 @@ public class GameManager : Singleton<GameManager>
     public PlayerController playerController;
     public int points = 0;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI highScoreText;
+
+    [SerializeField] private AudioSource coinSound;
+    [SerializeField] private AudioSource deathSound;
 
     public void StartGame()
     {
@@ -34,6 +38,8 @@ public class GameManager : Singleton<GameManager>
     }
     public void OnGameOver()
     {
+        deathSound.PlayDelayed(0.25f);
+        ShowHighscore();
         ShowLoseUI();
         Time.timeScale = 0;
     }
@@ -41,6 +47,12 @@ public class GameManager : Singleton<GameManager>
     public void UpdateScore()
     {
         points++;
+        coinSound.Play();
         scoreText.text = points.ToString();
+    }
+
+    public void ShowHighscore() {
+        DataManager.Instance.HighScore();
+        highScoreText.text = "Your best score is: " + DataManager.Instance.LoadScore();
     }
 }
