@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float strength = 1;
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private AudioSource birdHitSound;
 
     public Rigidbody2D rb;
     // Start is called before the first frame update
@@ -21,11 +23,13 @@ public class PlayerController : MonoBehaviour
         {
             //rb.AddForce(new Vector2(0, strength), ForceMode2D.Impulse);
             rb.velocity = Vector2.up * strength;
+            jumpSound.Play();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
+        birdHitSound.Play();
         GameManager.Instance.OnGameOver();
     }
 }
